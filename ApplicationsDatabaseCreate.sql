@@ -18,16 +18,16 @@ create table Product (
 )
 
 create table Company (
-   CompanyId     int,
-   [Name] nvarchar(2500) not null,
-   [Description] nvarchar(max) not null,
+   CompanyId             int,
+   [Name]                nvarchar(2500) not null,
+   [Description]         nvarchar(max) not null,
    constraint PK_Company primary key (CompanyId)
 )
 
 create table AdditionalProductInfo (
     AdditionalProductInfoId int unique not null,
-	[Type] nvarchar(1000) not null,
-	[CreationTime] datetime
+	[Type]                   nvarchar(1000) not null,
+	[CreationTime]           datetime
 )
 
 go
