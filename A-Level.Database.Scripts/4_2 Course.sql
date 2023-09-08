@@ -87,7 +87,7 @@ select * from Student_Course
 
 use AdventureWorksLT2019
 
--- Отримаю всі продукти котрі не продані
+-- пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 select * from SalesLT.Product as p where p.SellEndDate is not null
 select * from SalesLT.Product as p where p.SellEndDate is null
 
@@ -102,7 +102,7 @@ select AVG(p.ListPrice) from SalesLT.Product as p
 select SUM(p.ListPrice) from SalesLT.Product as p
 
 --select Color, ListPrice
---into  #TempColorPrice --Это временная таблица 
+--into  #TempColorPrice --пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
 --from SalesLT.Product
 
 --select * from  #TempColorPrice
@@ -141,24 +141,3 @@ select COUNT(*) from SalesLT.Product as p cross join SalesLT.ProductCategory
 select count(*) from SalesLT.Product, SalesLT.ProductCategory
 
 --update SalesLT.Product set ProductCategoryID = null where SalesLT.Product.ProductID = 707
-
---Transaction
-select @@TRANCOUNT as OpenTrans
-
-use [ALevel]
-
-begin transaction
-
-select @@TRANCOUNT as OpenTrans
-
-begin try
-	update Student set name = 'Vlad_outlook_updated' where studentId = 6
-	select * from Student
-	insert into Student values(9, 'Vlad_outlook_new', 'vlad2000@outlook.microsoft')
-	commit transaction
-end try
-begin catch
-	rollback transaction
-end catch
-
-select * from Student

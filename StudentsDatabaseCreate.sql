@@ -1,4 +1,4 @@
-IF DB_ID('ALevel') IS NOT NULL
+if DB_ID('ALevel') is not null
 begin
    print 'ALevel exists'
 end
@@ -41,8 +41,8 @@ begin
     insert into Student_Course values(1, 2) -- Vlad - .NET C#
     insert into Student_Course values(1, 3) -- Vlad - Typescript/Javascript
 
-    insert into Student_Course values(2, 2) -- Vlad - .NET C#
-    insert into Student_Course values(2, 4) -- Vlad - C++
+    insert into Student_Course values(3, 2) -- Vlad_2 - .NET C#
+    insert into Student_Course values(3, 4) -- Vlad_2 - C++
 
     select * from Student as l inner join Student_Course as r on l.studentId = r.studentId inner join Course c on  r.courseId = c.courseId
 

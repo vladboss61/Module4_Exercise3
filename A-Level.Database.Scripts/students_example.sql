@@ -23,11 +23,15 @@ create table Course (
   [durationHours] int
 );
 
-create table Student_Course (
+
+create table StudentCourse (
   studentId int,
   courseId int,
-  primary key (studentId, courseId),
+  
+  constraint PK_studentId_courseId primary key (studentId, courseId),
+
   foreign key (studentId) references Student(studentId),
+  
   foreign key (courseId) references Course(courseId)
 );
 

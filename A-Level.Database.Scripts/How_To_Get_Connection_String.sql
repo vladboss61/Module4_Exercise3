@@ -7,5 +7,4 @@ select
         else
             ';user id=' + suser_name()
     end
-from sys.server_principals
-where name = suser_name()
+from sys.server_principals where [name] = suser_name()
